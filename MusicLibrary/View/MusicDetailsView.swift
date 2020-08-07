@@ -13,35 +13,36 @@ struct MusicDetailsView: View {
     var musicdetailsModelView : MusicDetailsModelView
     
     var body: some View {
-        VStack(alignment: .leading){
-            HStack(alignment: .center){
-                Spacer()
-                GeometryReader { geo in
-                    Image(self.musicdetailsModelView.music.imageName).resizable()
-                    .aspectRatio(contentMode: .fit)
-                        .frame(width: geo.size.width, height: 250)
-                }
-                Spacer()
-            }.frame(width: nil, height: 220, alignment: .center)
-                
+        ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading){
-                CustomText(string: musicdetailsModelView.music.title ).font(Font.system(size: 20.0, weight: .bold, design: .default))
-                CustomText(string: self.musicdetailsModelView.music.description)
-                HStack{
-                    CustomText(string: "Release: ").font(Font.system(size: 17.0, weight: .bold, design: .default))
-                    CustomText(string: "\(self.musicdetailsModelView.music.release)")
-                }
-                HStack{
-                    CustomText(string: "Artist: ").font(Font.system(size: 17.0, weight: .bold, design: .default))
-                    CustomText(string: self.musicdetailsModelView.music.artist)
-                }
-            }.padding()
-            Spacer()
-        }.frame(minWidth: 0,
-                maxWidth: .infinity,
-                minHeight: 0,
-                maxHeight: .infinity,
-                alignment: .topLeading)
+                HStack(alignment: .center){
+                    Spacer()
+                    GeometryReader { geo in
+                        Image(self.musicdetailsModelView.music.imageName).resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: geo.size.width, height: 250)
+                    }
+                    Spacer()
+                }.frame(width: nil, height: 220, alignment: .center).clipped()
+                VStack(alignment: .leading){
+                    CustomText(string: musicdetailsModelView.music.title ).font(Font.system(size: 20.0, weight: .bold, design: .default))
+                    CustomText(string: self.musicdetailsModelView.music.description)
+                    HStack{
+                        CustomText(string: "Release: ").font(Font.system(size: 17.0, weight: .bold, design: .default))
+                        CustomText(string: "\(self.musicdetailsModelView.music.release)")
+                    }
+                    HStack{
+                        CustomText(string: "Artist: ").font(Font.system(size: 17.0, weight: .bold, design: .default))
+                        CustomText(string: self.musicdetailsModelView.music.artist)
+                    }
+                }.padding()
+                Spacer()
+            }.frame(minWidth: 0,
+                    maxWidth: .infinity,
+                    minHeight: 0,
+                    maxHeight: .infinity,
+                    alignment: .topLeading)
+        }
         .navigationBarTitle("Music Details",displayMode: .inline)
     }
 }
