@@ -8,6 +8,17 @@
 
 import SwiftUI
 
+extension CGFloat {
+    static func calcImageAspectRatio(_ imageName: String) -> CGFloat?
+    {
+        if let image = UIImage(named: imageName) {
+            let size = image.size
+            return size.height
+        }
+        return nil
+    }
+}
+
 struct MusicDetailsView: View {
     
     var musicdetailsModelView : MusicDetailsModelView
