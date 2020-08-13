@@ -42,8 +42,9 @@ struct MusicDetailsView: View {
     }
 }
 
-//struct MusicDetailsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        MusicDetailsView(music: Music(title: "Test", description: "Test", artist: "Test", release: 2019, imageName: "image1"))
-//    }
-//}
+struct MusicDetailsView_Previews: PreviewProvider {
+    static var previews: some View {
+        MusicDetailsView(musicdetailsModelView: MusicDetailsModelView.init(music: Music.init(title: "Test", description: "Test", artist: "Test", release: 2019, imageName: "image1")))
+    }
+}
+
