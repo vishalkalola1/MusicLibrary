@@ -9,7 +9,7 @@ SwiftUI Support
 
 **Model-View-ViewModel (MVVM)** is a design pattern that’s gained traction in the iOS development community in recent years. It involves a new concept called a **view model**. In iOS apps, a view model is a companion object to a view controller.
 
-| <a href="https://github.com/vishalkalola1/MusicLibrary/blob/master/MVVM.png"><img src="https://github.com/vishalkalola1/MusicLibrary/blob/master/MVVM.png" title=""/></a> |
+<a href="https://github.com/vishalkalola1/MusicLibrary/blob/master/MVVM.png"><img src="https://github.com/vishalkalola1/MusicLibrary/blob/master/MVVM.png" title=""/></a>
 
 As shown above, the MVVM pattern consists of three layers:
 
